@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Ubuntu" rel="stylesheet">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../CSS/estilos.css">
+    
+    <title>Formulario Login y Registro de Usuarios</title>
+</head>
+<body>
+    
+    <!-- Formularios -->
+    <div class="contenedor-formularios">
+        <!-- Links de los formularios -->
+        <ul class="contenedor-boton-reg_log">
+            <!-- Tab para Iniciar Sesión -->
+            <li class="tab tab-login active"><a href="#iniciar-sesion">Iniciar Sesión</a></li>
+            <!-- Tab para Registrarse -->
+            <li class="tab tab-register"><a href="#registrarse">Registrarse</a></li>
+        </ul>
+        
+        <!-- Contenido de los Formularios -->
+        <div class="contenido-tab">
+            <!-- Iniciar Sesión -->
+            <div id="iniciar-sesion">
+                <h1>Iniciar Sesión</h1>
+                <form action="../PHP/login.php" method="post">
+                    <!-- Campo de Usuario -->
+                    <div class="contenedor-input">
+                        <label for="usuario-login">
+                            Usuario <span class="req">*</span>
+                        </label>
+                        <input type="text" id="usuario-login" name="usuario" required>
+                    </div>
+                    
+                    <!-- Campo de Contraseña -->
+                    <div class="contenedor-input">
+                        <label for="contrasena-login">
+                            Contraseña <span class="req">*</span>
+                        </label>
+                        <input type="password" id="contrasena-login" name="contrasena" required>
+                    </div>
+                    <!-- Enlace para recuperar la contraseña -->
+                    <p class="forgot"><a href="#">¿Se te olvidó la contraseña?</a></p>
+                    <!-- Botón de Iniciar Sesión -->
+                    <input type="submit" class="button button-block" value="Iniciar Sesión">
+                </form>
+            </div>
+            
+            <!-- Registrarse -->
+            <div id="registrarse">
+                <h1>Registrarse</h1>
+                <form action="../PHP/registro.php" method="post"> <!-- Cambié el action a 'register.php' -->
+                    <!-- Campos para Nombre y Apellido -->
+                    <div class="fila-arriba">
+                        <div class="contenedor-input">
+                            <label for="nombre">
+                                Nombre <span class="req">*</span>
+                            </label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        
+                        <div class="contenedor-input">
+                            <label for="apellido">
+                                Apellido <span class="req">*</span>
+                            </label>
+                            <input type="text" id="apellido" name="apellido" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Campo de Usuario -->
+                    <div class="contenedor-input">
+                        <label for="usuario-register">
+                            Usuario <span class="req">*</span>
+                        </label>
+                        <input type="text" id="usuario-register" name="usuario" required>
+                    </div>
+                    <!-- Campo de Email -->
+                    <div class="contenedor-input">
+                        <label for="email">
+                            Email <span class="req">*</span>
+                        </label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <!-- Campo de Contraseña -->
+                    <div class="contenedor-input">
+                        <label for="contrasena-register">
+                            Contraseña <span class="req">*</span>
+                        </label>
+                        <input type="password" id="contrasena-register" name="contrasena" required>
+                    </div>
+                    
+                    <!-- Campo para Repetir Contraseña -->
+                    <div class="contenedor-input">
+                        <label for="repetir-contrasena">
+                            Repetir Contraseña <span class="req">*</span>
+                        </label>
+                        <input type="password" id="repetir-contrasena" name="repetir_contrasena" required>
+                    </div>
+                    
+                    <!-- Botón de Registrarse -->
+                    <input type="submit" class="button button-block" value="Registrarse">
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="../JS/jquery-3.3.1.js"></script>
+    <script src="../JS/main.js"></script>
+</body>
+</html>
