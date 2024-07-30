@@ -14,11 +14,11 @@ if ($conn->connect_error) {
 }
 
 // Obtener datos del formulario
-$nombre = isset($_POST['nombre']) ? $_POST['nombre'] : '';
-$apellido = isset($_POST['apellido']) ? $_POST['apellido'] : '';
-$usuario = isset($_POST['usuario']) ? $_POST['usuario'] : '';
-$email = isset($_POST['email']) ? $_POST['email'] : ''; 
-$contrasena = isset($_POST['contrasena']) ? password_hash($_POST['contrasena'], PASSWORD_BCRYPT) : ''; // Encriptar la contraseña
+$nombre = $_POST['nombre'];
+$apellido = $_POST['apellido'];
+$usuario = $_POST['usuario'];
+$email = $_POST['email'];
+$contrasena = password_hash($_POST['contrasena'], PASSWORD_BCRYPT); // Encriptar la contraseña
 
 // Verificar si el usuario o el email ya existen
 $sql = "SELECT id FROM usuarios WHERE usuario='$usuario' OR correo_electronico='$email'";

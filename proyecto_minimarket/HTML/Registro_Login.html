@@ -46,7 +46,7 @@
                         <input type="password" id="contrasena-login" name="contrasena" required>
                     </div>
                     <!-- Enlace para recuperar la contraseña -->
-                    <p class="forgot"><a href="#">¿Se te olvidó la contraseña?</a></p>
+                    <p class="forgot"><a href="#" id="forgot-password-link">¿Se te olvidó la contraseña?</a></p>
                     <!-- Botón de Iniciar Sesión -->
                     <input type="submit" class="button button-block" value="Iniciar Sesión">
                 </form>
@@ -55,7 +55,7 @@
             <!-- Registrarse -->
             <div id="registrarse">
                 <h1>Registrarse</h1>
-                <form action="../PHP/registro.php" method="post"> <!-- Cambié el action a 'register.php' -->
+                <form id="register-form" action="../PHP/registro.php" method="post"> <!-- Cambié el action a 'register.php' -->
                     <!-- Campos para Nombre y Apellido -->
                     <div class="fila-arriba">
                         <div class="contenedor-input">
@@ -110,8 +110,28 @@
         </div>
     </div>
     
+    <!-- Formulario de Recuperación de Contraseña -->
+    <div id="recuperar-contrasena" style="display:none;">
+        <h1>Recuperar Contraseña</h1>
+        <form id="recuperar-contrasena-form" action="../PHP/recuperar_contrasena.php" method="post">
+            <!-- Campo de Email -->
+            <div class="contenedor-input">
+                <label for="email-recuperacion">
+                    Email <span class="req">*</span>
+                </label>
+                <input type="email" id="email-recuperacion" name="email" required>
+            </div>
+            <!-- Botón de Enviar -->
+            <input type="submit" class="button button-block" value="Enviar">
+        </form>
+        <p id="mensaje-recuperacion" style="display:none;"></p>
+        <p><a href="#" id="volver-login">Volver a Iniciar Sesión</a></p>
+    </div>
+
+
     <!-- Scripts -->
     <script src="../JS/jquery-3.3.1.js"></script>
     <script src="../JS/main.js"></script>
+    <script src="../JS/notificacion.js"></script>
 </body>
 </html>
